@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/spec_helper'
+require File.dirname(__FILE__) + '/../spec_helper'
 
 describe ActiveTiger::Configuration do
   it "loads the yaml configuration for the given environment" do
