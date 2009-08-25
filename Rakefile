@@ -5,13 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "activetiger"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "dolson@inventables.com"
+    gem.summary = %Q{Easy integration with Tiger Payment Solutions}
+    gem.description = %Q{ActiveTiger allows you to simply add payment processing to your application using Tiger Payment Solutions}
+    gem.email = "development@inventables.com"
     gem.homepage = "http://github.com/drewolson/activetiger"
     gem.authors = ["Drew Olson"]
-    gem.add_development_dependency "thoughtbot-shoulda"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_development_dependency "rspec"
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
