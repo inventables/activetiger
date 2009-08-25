@@ -3,9 +3,14 @@ module ActiveTiger
     TIGER_GATEWAY_URL = "https://secure.tigergateway.net/api/transact.php"
 
     def initialize(params = {})
-      config = ActiveTiger::Configuration.new
-      @username = params[:username] || config.username
-      @password = params[:password] || config.password
+      if defined?(RAILS_ENV) && defined?(RAILS_ROOT)
+        config = ActiveTiger::Configuration.new
+        @username = config.username
+        @password = config.password
+      else
+        @username = params[:username]
+        @password = params[:password]
+      end
     end
 
     ["sale", "credit", "capture", "void", "refund", "update"].each do |operation|

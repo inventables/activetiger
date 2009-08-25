@@ -23,13 +23,24 @@ describe ActiveTiger::Gateway do
     gateway.sale :ccnumber => "4111111111111111", :ccexp => "1010", :amount => "1.00"
   end
 
-  it "defaults to payment configuration values" do
-    config_mock = mock("ActiveTiger configuration")
-    config_mock.should_receive(:username).and_return("drew")
-    config_mock.should_receive(:password).and_return("pass")
-    ActiveTiger::Configuration.should_receive(:new).and_return(config_mock)
+  context "if RAILS_ROOT and RAILS_ENV are defined" do
+    it "defaults to payment configuration values" do
+      with_constants :RAILS_ROOT => "bar", :RAILS_ENV => "test" do
+        config_mock = mock("ActiveTiger configuration")
+        config_mock.should_receive(:username).and_return("drew")
+        config_mock.should_receive(:password).and_return("pass")
+        ActiveTiger::Configuration.should_receive(:new).and_return(config_mock)
 
-    gateway = ActiveTiger::Gateway.new
+        gateway = ActiveTiger::Gateway.new
+      end
+    end
+  end
+
+  context "if RAILS_ROOT or RAILS_ENV are not defined" do
+    it "should not create an instance of the configuration class" do
+      ActiveTiger::Configuration.should_not_receive(:new)
+      gateway = ActiveTiger::Gateway.new
+    end
   end
 
   describe "#sale" do
