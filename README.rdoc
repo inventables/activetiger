@@ -15,4 +15,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2009 Drew Olson. See LICENSE for details.
+Copyright (c) 2009 Inventables. See LICENSE for details.
