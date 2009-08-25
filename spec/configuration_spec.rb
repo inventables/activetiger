@@ -5,6 +5,7 @@ describe ActiveTiger::Configuration do
     file_mock = mock("Config file")
     File.should_receive(:read).with("foo/config/payment/test.yml").and_return(file_mock)
     YAML.should_receive(:load).with(file_mock)
+
     with_constants :RAILS_ENV => "test", :RAILS_ROOT => "foo" do
       ActiveTiger::Configuration.new
     end
