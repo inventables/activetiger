@@ -19,6 +19,7 @@ rescue LoadError
 end
 
 task :spec => :check_dependencies
+task :default => :spec
 
 Spec::Rake::SpecTask.new do |t|
   t.warning = true
