@@ -1,7 +1,7 @@
 module ActiveTiger
   class Configuration
     def initialize
-      config_path = File.join(RAILS_ROOT, "config", "payment", "#{RAILS_ENV}.yml")
+      config_path = File.join(RAILS_ROOT, "config", "activetiger", "#{RAILS_ENV}.yml")
       @config = YAML.load(File.read(config_path))
     end
 
