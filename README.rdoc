@@ -20,7 +20,7 @@ Authorize and capture a credit card:
   )
 
   # capture
-  gateway.charge(:transactionid => response.transaction_id)
+  gateway.capture(:transactionid => response.transaction_id)
 
 ==Rails Integration
 
