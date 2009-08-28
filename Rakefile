@@ -25,6 +25,12 @@ Spec::Rake::SpecTask.new do |t|
   t.warning = true
 end
 
+Spec::Rake::SpecTask.new(:rcov) do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.rcov = true
+  t.rcov_opts = ['--exclude', 'spec']
+end
+
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   if File.exist?('VERSION')
