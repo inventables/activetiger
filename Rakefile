@@ -42,5 +42,6 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "activetiger #{version}"
   rdoc.template = '/opt/local/lib/ruby/gems/1.8/gems/allison-2.0.3/lib/allison'
+  rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
