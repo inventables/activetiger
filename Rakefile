@@ -6,10 +6,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "activetiger"
-    gem.summary = %Q{Easy integration with Tiger Payment Solutions}
+    gem.summary = %Q{ruby integration with Tiger Payment Solutions}
     gem.description = %Q{ActiveTiger allows you to simply add payment processing to your application using Tiger Payment Solutions}
     gem.email = "development@inventables.com"
-    gem.homepage = "http://github.com/drewolson/activetiger"
+    gem.homepage = "http://github.com/inventables/activetiger"
     gem.authors = ["Drew Olson"]
     gem.add_development_dependency "rspec"
     gem.add_dependency "adamwiggins-rest-client", ">=1.0.4"
