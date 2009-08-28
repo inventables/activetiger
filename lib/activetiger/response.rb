@@ -1,4 +1,39 @@
 module ActiveTiger
+  # =Overview
+  #
+  # The Response object describes what happened to your Gateway request. Let's
+  # set up a response object.
+  #
+  #  gateway = ActiveTiger::Gateway.new(:username => "foo", :password => "password")
+  #  response = gateway.sale(
+  #    :ccnumber => '4111111111111111', 
+  #    :ccexp => '1010', 
+  #    :amount => '1.00'
+  #  )
+  #
+  # ==Status
+  #
+  # When you get your response back from the Gateway, you can quickly check
+  # the status using three methods; #approved?, #declined? and #has_errors?
+  # The status is completely dependent on the response code from the gateway.
+  #
+  #  if response.approved?
+  #    puts "awesome"
+  #  elsif response.declined?
+  #    puts "someone doesn't have the cash, or the wrong card info"
+  #  elsif response.has_errors?
+  #    puts "there was probably a problem with the gateway or something"
+  #  end
+  #
+  # ==Messages
+  #
+  # There are three types of messages you can get from the response; the
+  # message, the response code, and the response_code_message.
+  #
+  #  response.message
+  #  response.response_code
+  #  response.response_code_message
+  
   class Response
     RESPONSE = {
       :approved => "1",
