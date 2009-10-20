@@ -5,7 +5,7 @@
 activetiger is a ruby library that allows interaction with Tiger Payment Processing. 
 Using simple commands you can charge, authorize, capture, void, refund and update 
 credit card transactions. Some simple examples are below, see 
-http://inventables.github.com/activetiger for complete documentation.
+http://rdoc.info/projects/inventables/activetiger for complete documentation.
 
 ==Simple example
 
