@@ -58,4 +58,4 @@ the sandbox account while run production with your account. Very handy for testi
 
 ==Copyright
 
-Copyright (c) 2009 Inventables. See LICENSE for details.
+Copyright (c) 2011 Inventables. See LICENSE for details.
