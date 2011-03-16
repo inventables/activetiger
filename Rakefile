@@ -12,7 +12,7 @@ begin
     gem.homepage = "http://github.com/inventables/activetiger"
     gem.authors = ["Drew Olson"]
     gem.add_development_dependency "rspec"
-    gem.add_dependency "adamwiggins-rest-client", ">=1.0.4"
+    gem.add_dependency "rest-client", ">=1.0.4"
   end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
