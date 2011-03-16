@@ -10,7 +10,7 @@ begin
     gem.description = %Q{ActiveTiger allows you to simply add payment processing to your application using Tiger Payment Solutions}
     gem.email = "development@inventables.com"
     gem.homepage = "http://github.com/inventables/activetiger"
-    gem.authors = ["Drew Olson"]
+    gem.authors = ["Drew Olson", "Matt Gornick", "Kurt Preston"]
     gem.add_development_dependency "rspec"
     gem.add_dependency "rest-client", ">=1.0.4"
   end
