@@ -18,7 +18,7 @@ rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
 
-task :spec => :check_dependencies
+task :spec #=> :check_dependencies
 task :default => :spec
 
 Spec::Rake::SpecTask.new do |t|
