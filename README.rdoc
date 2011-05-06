@@ -2,9 +2,9 @@
 
 ==Overview
 
-activetiger is a ruby library that allows interaction with Tiger Payment Processing. 
-Using simple commands you can charge, authorize, capture, void, refund and update 
-credit card transactions. Some simple examples are below, see 
+activetiger is a ruby library that allows interaction with Tiger Payment Processing.
+Using simple commands you can charge, authorize, capture, void, refund and update
+credit card transactions. Some simple examples are below, see
 http://rdoc.info/projects/inventables/activetiger for complete documentation.
 
 ==Simple example
@@ -14,8 +14,8 @@ Authorize and capture a credit card:
   # authorize the charge
   gateway = ActiveTiger::Gateway.new :username => "user", :password => "password"
   response = gateway.authorize(
-    :ccnumber => "4111111111111111", 
-    :ccexp => "1010", 
+    :ccnumber => "4111111111111111",
+    :ccexp => "1010",
     :amount => "1.00"
   )
 
@@ -24,32 +24,32 @@ Authorize and capture a credit card:
 
 ==Rails Integration
 
-activetiger works great with rails. When used in a rails project, active tiger looks 
-for a directory called config/activetiger. Within this directory, it expects to find 
-yaml configuration files for each environment in which you will be using activetiger. 
-Tiger Payment Processing provides a dummy account with the username of "demo" and the 
-password of "password". The standard configuration would normally be something like 
+activetiger works great with rails. When used in a rails project, active tiger looks
+for a directory called config/activetiger. Within this directory, it expects to find
+yaml configuration files for each environment in which you will be using activetiger.
+Tiger Payment Processing provides a dummy account with the username of "demo" and the
+password of "password". The standard configuration would normally be something like
 the example below:
 
   # config/activetiger/development.yml
   username: demo
   password: password
-  
+
   # config/activetiger/test.yml
   username: demo
   password: password
-  
+
   # config/activetiger/production.yml
   username: realusername
   password: realpassword
 
-The above setup allows you to instantiate an ActiveTiger::Gateway without providing a 
-username or password. It will be instantiated with the credentials specified in the 
-yaml config files based on the environment. This allows you the test and develop against 
+The above setup allows you to instantiate an ActiveTiger::Gateway without providing a
+username or password. It will be instantiated with the credentials specified in the
+yaml config files based on the environment. This allows you the test and develop against
 the sandbox account while run production with your account. Very handy for testing.
 
 ==Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a future version unintentionally.
