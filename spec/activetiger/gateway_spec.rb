@@ -23,9 +23,9 @@ describe ActiveTiger::Gateway do
     gateway.sale :ccnumber => "4111111111111111", :ccexp => "1010", :amount => "1.00"
   end
 
-  context "if RAILS_ROOT and RAILS_ENV are defined" do
+  context "if Rails.root and Rails.env are defined" do
     it "defaults to payment configuration values" do
-      with_constants :RAILS_ROOT => "bar", :RAILS_ENV => "test" do
+      with_constants :Rails.root => "bar", :Rails.env => "test" do
         config_mock = mock("ActiveTiger configuration")
         config_mock.should_receive(:username).and_return("drew")
         config_mock.should_receive(:password).and_return("pass")
@@ -36,7 +36,7 @@ describe ActiveTiger::Gateway do
     end
   end
 
-  context "if RAILS_ROOT or RAILS_ENV are not defined" do
+  context "if Rails.root or Rails.env are not defined" do
     it "should not create an instance of the configuration class" do
       ActiveTiger::Configuration.should_not_receive(:new)
       gateway = ActiveTiger::Gateway.new

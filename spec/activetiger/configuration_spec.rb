@@ -6,7 +6,7 @@ describe ActiveTiger::Configuration do
     File.should_receive(:read).with("foo/config/activetiger/test.yml").and_return(file_mock)
     YAML.should_receive(:load).with(file_mock)
 
-    with_constants :RAILS_ENV => "test", :RAILS_ROOT => "foo" do
+    with_constants :Rails.env => "test", :Rails.root => "foo" do
       ActiveTiger::Configuration.new
     end
   end
@@ -20,7 +20,7 @@ password: pass
 
       File.should_receive(:read).with("foo/config/activetiger/test.yml").and_return(yml)
 
-      with_constants :RAILS_ENV => "test", :RAILS_ROOT => "foo" do
+      with_constants :Rails.env => "test", :Rails.root => "foo" do
         @config = ActiveTiger::Configuration.new
       end
     end
