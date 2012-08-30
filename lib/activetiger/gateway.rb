@@ -6,7 +6,7 @@ module ActiveTiger
   # rails application, there's no need to provide username/password
   # credentials on instantiation. ActiveTiger will look for a configuration
   # file at:
-  #   config/activetiger/#{RAILS_ENV}.yml 
+  #   config/activetiger/#{Rails.env}.yml 
   #
   # =Creating a Gateway
   #
@@ -99,7 +99,7 @@ module ActiveTiger
     TIGER_GATEWAY_URL = "https://secure.tigergateway.net/api/transact.php"
 
     def initialize(params = {})
-      if defined?(RAILS_ENV) && defined?(RAILS_ROOT)
+      if defined?(Rails.env) && defined?(Rails.root)
         config = ActiveTiger::Configuration.new
         @username = config.username
         @password = config.password
